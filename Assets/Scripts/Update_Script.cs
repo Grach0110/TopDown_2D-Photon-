@@ -23,6 +23,7 @@ public class Update_Script : MonoBehaviour
     /// Текущая версия разработки
     /// </summary>
     [SerializeField] string developmentVersion;
+
     private string stringText = "Current development Version ";
 
     private void Start()
@@ -32,7 +33,7 @@ public class Update_Script : MonoBehaviour
 
     private void Update()
     {
-        if (ManagerConnection.GetComponent<Connect_Script>().isConnect)
+        if (ManagerConnection.GetComponent<Connect_Lobby_Script>().isConnect)
         {
             buttonUpdate.interactable = true;
         }
@@ -43,7 +44,7 @@ public class Update_Script : MonoBehaviour
     }
 
     /// <summary>
-    /// Проверка обновления
+    /// Переход в облако для обнавления
     /// </summary>
     public void ButtonCheckUpdate()
     {

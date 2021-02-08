@@ -501,20 +501,20 @@ namespace Photon.Pun
         private static bool automaticallySyncScene = false;
 
         /// <summary>
-        /// If enabled, the client will get a list of available lobbies from the Master Server.
+        /// Если этот параметр включен, клиент получит список доступных лобби с Главного сервера.
         /// </summary>
         /// <remarks>
-        /// Set this value before the client connects to the Master Server. While connected to the Master
-        /// Server, a change has no effect.
+        /// Установите это значение перед подключением клиента к Главному серверу. При подключении к мастеру
+        /// Сервер, изменение не имеет никакого эффекта.
         ///
-        /// Implement OptionalInfoCallbacks.OnLobbyStatisticsUpdate, to get the list of used lobbies.
+        /// Реализуйте Дополнительные Информационные Обратные Вызовы.При обновлении статистики лобби, чтобы получить список используемых лобби.
         ///
-        /// The lobby statistics can be useful if your title dynamically uses lobbies, depending (e.g.)
-        /// on current player activity or such.
-        /// In this case, getting a list of available lobbies, their room-count and player-count can
-        /// be useful info.
+        /// Статистика лобби может быть полезна, если ваш заголовок динамически использует лобби, в зависимости (например,)
+        /// о текущей активности игрока или о чем-то подобном.
+        /// В этом случае, получив список доступных лобби, их количество комнат и количество игроков, можно
+        /// будьте полезной информацией.
         ///
-        /// ConnectUsingSettings sets this to the PhotonServerSettings value.
+        /// ConnectUsingSettings устанавливает это значение в значение PhotonServerSettings.
         /// </remarks>
         public static bool EnableLobbyStatistics
         {
@@ -849,7 +849,7 @@ namespace Photon.Pun
 
 
         /// <summary>
-        /// The count of players currently looking for a room (available on MasterServer in 5sec intervals).
+        /// Количество игроков, которые в данный момент ищут комнату (доступно на Главном сервере с интервалом в 5 секунд).
         /// </summary>
         public static int CountOfPlayersOnMaster
         {
@@ -860,8 +860,8 @@ namespace Photon.Pun
         }
 
         /// <summary>
-        /// Count of users currently playing your app in some room (sent every 5sec by Master Server).
-        /// Use PhotonNetwork.PlayerList.Length or PhotonNetwork.CurrentRoom.PlayerCount to get the count of players in the room you're in!
+        /// Количество пользователей, которые в данный момент играют в ваше приложение в какой-то комнате (отправляется каждые 5 секунд Главным сервером).
+        /// Используйте фотосеть.Список игроков.Длина или фотосеть.Текущий зал.Подсчет игроков, чтобы получить количество игроков в комнате, в которой вы находитесь!
         /// </summary>
         public static int CountOfPlayersInRooms
         {
@@ -872,7 +872,7 @@ namespace Photon.Pun
         }
 
         /// <summary>
-        /// The count of players currently using this application (available on MasterServer in 5sec intervals).
+        /// Количество игроков, использующих в данный момент это приложение (доступно на Главном сервере с интервалом в 5 секунд).
         /// </summary>
         public static int CountOfPlayers
         {
@@ -883,7 +883,7 @@ namespace Photon.Pun
         }
 
         /// <summary>
-        /// The count of rooms currently in use (available on MasterServer in 5sec intervals).
+        /// Количество комнат, используемых в данный момент (доступно на Главном сервере с интервалом в 5 секунд).
         /// </summary>
         public static int CountOfRooms
         {
@@ -1902,20 +1902,20 @@ namespace Photon.Pun
         }
 
 
-        /// <summary>Leave the current room and return to the Master Server where you can join or create rooms (see remarks).</summary>
+        /// <summary>Покиньте текущую комнату и вернитесь на Главный сервер, где вы можете присоединиться или создать комнаты (см. Примечания).</summary>
         /// <remarks>
-        /// This will clean up all (network) GameObjects with a PhotonView, unless you changed autoCleanUp to false.
-        /// Returns to the Master Server.
+        /// Это очистит все (сетевые) игровые объекты с помощью PhotonView, если только вы не изменили autoCleanUp на false.
+        /// Возвращается на Главный сервер.
         ///
-        /// In OfflineMode, the local "fake" room gets cleaned up and OnLeftRoom gets called immediately.
+        /// В автономном режиме местная "фальшивая" комната очищается, и OnLeftRoom немедленно вызывается.
         ///
-        /// In a room with playerTTL &lt; 0, LeaveRoom just turns a client inactive. The player stays in the room's player list
-        /// and can return later on. Setting becomeInactive to false deliberately, means to "abandon" the room, despite the
-        /// playerTTL allowing you to come back.
+        /// В комнате с плеером TTL &lt; 0 Выход из комнаты просто делает клиента неактивным. Игрок остается в списке игроков комнаты
+        /// и может вернуться позже. Установка стать неактивным на ложное намеренно означает "отказаться" от комнаты, несмотря на
+        /// pслой TTL позволяет вам вернуться.
         ///
-        /// In a room with playerTTL == 0, become inactive has no effect (clients are removed from the room right away).
+        /// В комнате с playertotal = = 0 стать неактивным не имеет никакого эффекта (клиенты сразу же удаляются из комнаты).
         /// </remarks>
-        /// <param name="becomeInactive">If this client becomes inactive in a room with playerTTL &lt; 0. Defaults to true.</param>
+        /// <param name="becomeInactive">Если этот клиент становится неактивным в комнате с плеером TTL &lt; 0. По умолчанию установлено значение true.</param>
         public static bool LeaveRoom(bool becomeInactive = true)
         {
             if (OfflineMode)

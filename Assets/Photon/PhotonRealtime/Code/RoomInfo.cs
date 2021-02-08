@@ -22,20 +22,20 @@ namespace Photon.Realtime
     #if SUPPORTED_UNITY || NETFX_CORE
     using Hashtable = ExitGames.Client.Photon.Hashtable;
     using SupportClass = ExitGames.Client.Photon.SupportClass;
-    #endif
+#endif
 
 
     /// <summary>
-    /// A simplified room with just the info required to list and join, used for the room listing in the lobby.
-    /// The properties are not settable (IsOpen, MaxPlayers, etc).
+    /// Упрощенный номер с информацией, необходимой для перечисления и присоединения, используемый для перечисления номеров в вестибюле.
+    /// Свойства не настраиваются (Is Open, MaxPlayers и тд.).
     /// </summary>
     /// <remarks>
-    /// This class resembles info about available rooms, as sent by the Master server's lobby.
-    /// Consider all values as readonly. None are synced (only updated by events by server).
+    /// Этот класс напоминает информацию о доступных номерах, отправленную вестибюлем Главного сервера.
+    /// Считайте, что все значения доступны только для чтения. Ни один из них не синхронизируется (обновляется только событиями на сервере).
     /// </remarks>
     public class RoomInfo
     {
-        /// <summary>Used in lobby, to mark rooms that are no longer listed (for being full, closed or hidden).</summary>
+        /// <summary>Uиспользуется в вестибюле, чтобы отметить номера, которые больше не перечислены (для того, чтобы быть заполненными, закрытыми или скрытыми).</summary>
         public bool RemovedFromList;
 
         /// <summary>Backing field for property.</summary>

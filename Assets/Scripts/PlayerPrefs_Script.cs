@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class PlaerPrefs_Script : MonoBehaviour
+public class PlayerPrefs_Script : MonoBehaviour
 {
     /// <summary>
     /// Поле для вода имени
@@ -45,12 +45,14 @@ public class PlaerPrefs_Script : MonoBehaviour
         PlayerPrefs.SetString("Name", inputFieldNamePlayer.text);
         buttonSelectNamePlayer.interactable = false;
 
-        managerPlayer.GetComponent<PlayerManager_script>().namePlayer = inputFieldNamePlayer.text;
+        managerPlayer.GetComponent<PlayerManager_script>().NamePlayer = inputFieldNamePlayer.text;
         managerPlayer.GetComponent<PlayerManager_script>().Save();
+        Debug.Log("Выбор нового имени игрока ");
     }
 
     private void GetName()
     {
         inputFieldNamePlayer.text = PlayerPrefs.GetString("Name");
+        Debug.Log("Имя игрока установленно ");
     }
 }

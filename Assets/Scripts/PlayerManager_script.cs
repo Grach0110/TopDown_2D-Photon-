@@ -6,19 +6,40 @@ using UnityEngine;
 /// </summary>
 public class PlayerManager_script : MonoBehaviour
 {
+    /// <summary>
+    /// Путь к папке
+    /// </summary>
     string subPath = @"Assets/Resources";
+    /// <summary>
+    /// Название файла
+    /// </summary>
     string nameFile = @"PlayerInfo.txt";
 
     /// <summary>
     /// Текущее имя игрока
     /// </summary>
-    public string namePlayer;
+    private string namePlayer;
 
-    private void Start()
+    public string NamePlayer
+    {
+        get
+        {
+            return namePlayer;
+        }
+        set
+        {
+            namePlayer = value;
+        }
+    }
+
+    private void Awake()
     {
         Load();
     }
 
+    /// <summary>
+    /// Сохранение
+    /// </summary>
     public void Save()
     {
         DirectoryInfo directoryInfo = new DirectoryInfo(subPath);
@@ -35,15 +56,20 @@ public class PlayerManager_script : MonoBehaviour
             fileInfo.Create();
         }
 
-        StreamWriter streamWriter = new StreamWriter(subPath + "/" + nameFile, false, System.Text.Encoding.Default);
+        StreamWriter streamWriter = new StreamWriter(subPath + "/" + nameFile, false, System.Text.Encoding.UTF8);
         streamWriter.WriteLineAsync(namePlayer);
         streamWriter.Close();
+        Debug.Log("Сохранение ");
     }
 
+    /// <summary>
+    /// Загрузка
+    /// </summary>
     private void Load()
     {
-        StreamReader streamReader = new StreamReader(subPath + "/" + nameFile);
+        StreamReader streamReader = new StreamReader(subPath + "/" + nameFile,System.Text.Encoding.UTF8);
         namePlayer = streamReader.ReadLine();
         streamReader.Close();
+        Debug.Log("Загрузка ");
     }
 }
