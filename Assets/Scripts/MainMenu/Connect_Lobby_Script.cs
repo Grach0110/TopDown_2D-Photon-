@@ -87,7 +87,7 @@ public class Connect_Lobby_Script : MonoBehaviourPunCallbacks
         else
         {
             PhotonNetwork.GameVersion = currentVersionPhoton;
-            PhotonNetwork.NickName = playerManager.GetComponent<PlayerManager_script>().NamePlayer;
+            PhotonNetwork.NickName = playerManager.GetComponent<PlayerManager_script>().namePlayer;
             PhotonNetwork.ConnectUsingSettings();
             PhotonNetwork.AutomaticallySyncScene = true;
         }
