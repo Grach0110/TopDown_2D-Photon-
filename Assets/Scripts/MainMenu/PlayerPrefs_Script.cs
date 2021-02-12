@@ -45,7 +45,7 @@ public class PlayerPrefs_Script : MonoBehaviour
         PlayerPrefs.SetString("Name", inputFieldNamePlayer.text);
         buttonSelectNamePlayer.interactable = false;
 
-        managerPlayer.GetComponent<PlayerManager_script>().namePlayer = inputFieldNamePlayer.text;
+        managerPlayer.GetComponent<PlayerManager_script>().NamePlayer = inputFieldNamePlayer.text;
         managerPlayer.GetComponent<PlayerManager_script>().Save();
         Debug.Log("Выбор нового имени игрока ");
     }

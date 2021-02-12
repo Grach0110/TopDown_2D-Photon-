@@ -1,43 +1,75 @@
 ﻿using System.IO;
 using UnityEngine;
-using UnityEngine.UI;
 
 /// <summary>
 /// Информация о игрока
 /// </summary>
 public class PlayerManager_script : MonoBehaviour
 {
-    public Text textName;
-    public Text textPaht;
-    string nameFile = "/PlayerInfo.txt";
+    /// <summary>
+    /// Путь к папке
+    /// </summary>
+    string subPath = @"Assets/Resources";
+    /// <summary>
+    /// Название файла
+    /// </summary>
+    string nameFile = @"PlayerInfo.txt";
 
-    public string namePlayer;
+    /// <summary>
+    /// Текущее имя игрока
+    /// </summary>
+    private string namePlayer;
 
-    public int level;
-
-    public PlayerManager_script (PlayerManager_script player)
+    public string NamePlayer
     {
-        namePlayer = player.namePlayer;
-        level = player.level;
+        get
+        {
+            return namePlayer;
+        }
+        set
+        {
+            namePlayer = value;
+        }
     }
 
-    private void Start()
+    private void Awake()
     {
-        //Load();
-        textName.text = "С возвращением " + namePlayer;
-        textPaht.text = Application.persistentDataPath + nameFile;
+        Load();
     }
 
+    /// <summary>
+    /// Сохранение
+    /// </summary>
     public void Save()
     {
-        SaveSystem_script.SavePlayer(this);
+        DirectoryInfo directoryInfo = new DirectoryInfo(subPath);
+
+        if (!directoryInfo.Exists)
+        {
+            directoryInfo.Create();
+        }
+
+        FileInfo fileInfo = new FileInfo(subPath + "/" + nameFile);
+
+        if (!fileInfo.Exists)
+        {
+            fileInfo.Create();
+        }
+
+        StreamWriter streamWriter = new StreamWriter(subPath + "/" + nameFile, false, System.Text.Encoding.UTF8);
+        streamWriter.WriteLineAsync(namePlayer);
+        streamWriter.Close();
+        Debug.Log("Сохранение ");
     }
 
-    public void Load()
+    /// <summary>
+    /// Загрузка
+    /// </summary>
+    private void Load()
     {
-       PlayerManager_script data = SaveSystem_script.LoadPlayer();
-
-        namePlayer = data.namePlayer;
-        level = data.level;
+        StreamReader streamReader = new StreamReader(subPath + "/" + nameFile,System.Text.Encoding.UTF8);
+        namePlayer = streamReader.ReadLine();
+        streamReader.Close();
+        Debug.Log("Загрузка ");
     }
 }
