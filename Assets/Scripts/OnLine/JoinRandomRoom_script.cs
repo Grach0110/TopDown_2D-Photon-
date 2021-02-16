@@ -47,6 +47,6 @@ public class JoinRandomRoom_script : MonoBehaviourPunCallbacks
     public override void OnCreatedRoom()
     {
         Debug.Log("Комната создана, загрузка сцены с игрой ");
-        PhotonNetwork.LoadLevel(1);
+        PhotonNetwork.LoadLevel("TestScene");
     }
 }

@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ManagerScene_Script : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class ManagerScene_Script : MonoBehaviour
     [SerializeField] GameObject panelCreateRoom;
     [SerializeField] GameObject panelCurrentRoom;
     [SerializeField] GameObject panelSettings;
+    [SerializeField] GameObject panelGame;
 
     bool connect;
 
@@ -19,6 +21,7 @@ public class ManagerScene_Script : MonoBehaviour
         panelCreateRoom.SetActive(false);
         panelCurrentRoom.SetActive(false);
         panelSettings.SetActive(false);
+        panelGame.SetActive(false);
     }
 
     public void Update()
@@ -40,6 +43,11 @@ public class ManagerScene_Script : MonoBehaviour
             panelCreateRoom.SetActive(false);
             panelCurrentRoom.SetActive(false);
         }
+    }
+
+    public void LoadScene_One()
+    {
+        SceneManager.LoadScene(1);
     }
 
     public void ExitApp()

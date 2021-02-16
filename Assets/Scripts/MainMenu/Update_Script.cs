@@ -24,7 +24,7 @@ public class Update_Script : MonoBehaviour
     /// </summary>
     [SerializeField] string developmentVersion;
 
-    private string stringText = "Current development Version ";
+    private string stringText = "Current development version ";
 
     private void Start()
     {
