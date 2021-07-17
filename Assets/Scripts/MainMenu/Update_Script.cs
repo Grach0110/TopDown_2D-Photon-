@@ -48,6 +48,6 @@ public class Update_Script : MonoBehaviour
     /// </summary>
     public void ButtonCheckUpdate()
     {
-        Application.OpenURL("https://yadi.sk/d/LC2b4BQw8hOzTw");
+        Application.OpenURL("https://yadi.sk/d/loPvIeQsXsbBFw");
     }
 }

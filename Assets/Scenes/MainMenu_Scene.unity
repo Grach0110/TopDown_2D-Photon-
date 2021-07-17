@@ -1046,6 +1046,7 @@ MonoBehaviour:
   m_CaretBlinkRate: 0.85
   m_CaretWidth: 1
   m_ReadOnly: 0
+  m_ShouldActivateOnSelect: 1
 --- !u!114 &160452898
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6222,6 +6223,7 @@ MonoBehaviour:
   m_CaretBlinkRate: 0.85
   m_CaretWidth: 1
   m_ReadOnly: 0
+  m_ShouldActivateOnSelect: 1
 --- !u!114 &1419425542
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6985,7 +6987,7 @@ MonoBehaviour:
   buttonUpdate: {fileID: 707880123}
   ManagerConnection: {fileID: 242037189}
   textCurrentVersion: {fileID: 1393566064}
-  developmentVersion: 0.6
+  developmentVersion: 0.7
 --- !u!4 &1634674978
 Transform:
   m_ObjectHideFlags: 0
