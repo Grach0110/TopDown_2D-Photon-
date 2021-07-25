@@ -47,7 +47,11 @@ public class PlayerMovementSystem : MonoBehaviour
         float hAxis = joystick.Horizontal;
         float vAxis = joystick.Vertical;
         float zAxis = Mathf.Atan2(hAxis, vAxis) * Mathf.Rad2Deg;
-        transform.eulerAngles = new Vector3(0, 0, -zAxis);
+
+        if (hAxis != 0 && vAxis != 0)
+        {
+            transform.eulerAngles = new Vector3(0, 0, -zAxis);
+        }
 
         rigidbody2D.MovePosition(rigidbody2D.position + movement * speed * Time.fixedDeltaTime);
     }

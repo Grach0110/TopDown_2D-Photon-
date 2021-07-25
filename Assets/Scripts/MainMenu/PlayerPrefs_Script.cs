@@ -46,7 +46,7 @@ public class PlayerPrefs_Script : MonoBehaviour
         buttonSelectNamePlayer.interactable = false;
 
         managerPlayer.GetComponent<Player>().name = inputFieldNamePlayer.text;
-        managerPlayer.GetComponent<Player>().SavePlayer();
+        //managerPlayer.GetComponent<Player>().SavePlayer();
         managerPlayer.GetComponent<Player>().textWelcom.text = "С возвращением\n" + inputFieldNamePlayer.text + " !!!!";
         Debug.Log("Выбор нового имени игрока ");
     }
