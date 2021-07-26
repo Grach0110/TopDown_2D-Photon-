@@ -74,6 +74,8 @@ public class FiringSystem : MonoBehaviour
 
         textAmmo.text = clip + " / " + bulletInClip;
         imageWeapon.GetComponent<Image>();
+
+        updateSprite = true;
     }
 
     private void Update()
@@ -91,7 +93,6 @@ public class FiringSystem : MonoBehaviour
             isReadyClip = false;
         }
         //TestDev();
-    
     }
 
     /// <summary>
@@ -105,22 +106,21 @@ public class FiringSystem : MonoBehaviour
             {
                 spriteRenderer.sprite = sprites[1];
 
-                imageWeapon.GetComponent<Image>().sprite = spriteGuns[0];
+                imageWeapon.GetComponent<Image>().sprite = spriteGuns[1];
             }
             else
             {
-                spriteRenderer.sprite = sprites[0];
+                //spriteRenderer.sprite = sprites[0];
 
-                //imageWeapon.sprite = null;
+                imageWeapon.GetComponent<Image>().sprite = spriteGuns[0];
+                Debug.Log("No Pistol ");
             }
             if (pistol && silencer)
             {
                 spriteRenderer.sprite = sprites[2];
 
-                imageWeapon.GetComponent<Image>().sprite = spriteGuns[1];
+                imageWeapon.GetComponent<Image>().sprite = spriteGuns[2];
             }
-            
-
         }
         updateSprite = false;
     }
@@ -154,7 +154,7 @@ public class FiringSystem : MonoBehaviour
 
         spriteRenderer.sprite = sprites[3];
 
-        if (timerReload < 0 && !isReadyClip && clip !=0 )
+        if (timerReload <= 0 && !isReadyClip && clip !=0 )
         {
             spriteRenderer.sprite = sprites[3];
             isRedyShoot = true;
@@ -179,10 +179,7 @@ public class FiringSystem : MonoBehaviour
         textAmmo.text = clip + " / " + bulletInClip;
     }
 
-
-
-
-    public void TestDev()
+    public void TestDev() //----------------------------------------------------------
     {
         if (Input.GetKeyDown(KeyCode.Q))
         {

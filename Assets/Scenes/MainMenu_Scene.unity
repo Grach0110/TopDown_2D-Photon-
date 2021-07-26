@@ -6987,7 +6987,7 @@ MonoBehaviour:
   buttonUpdate: {fileID: 707880123}
   ManagerConnection: {fileID: 242037189}
   textCurrentVersion: {fileID: 1393566064}
-  developmentVersion: 0.7
+  developmentVersion: 0.8
 --- !u!4 &1634674978
 Transform:
   m_ObjectHideFlags: 0
@@ -7668,7 +7668,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1780553804}
   m_OnClick:
     m_PersistentCalls:

@@ -52,16 +52,16 @@ public class Connect_Lobby_Script : MonoBehaviourPunCallbacks
         // Проверка, может ли устройство выйти в Интернет через сеть передачи данных оператора
         else if (Application.internetReachability == NetworkReachability.ReachableViaCarrierDataNetwork)
         {
-            textConnect.text = "Reachable via carrier data network.";
+            textConnect.text = "Подключено ";
             isConnect = true;
-            buttonOnline.interactable = true;
+            //buttonOnline.interactable = true;
         }
         // Проверка, может ли устройство выйти в Интернет через локальную сеть
         else if (Application.internetReachability == NetworkReachability.ReachableViaLocalAreaNetwork)
         {
             textConnect.text = "Подключено ";
             isConnect = true;
-            buttonOnline.interactable = true;
+            //buttonOnline.interactable = true;
         }
         return isConnect;
     }

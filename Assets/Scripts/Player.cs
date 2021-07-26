@@ -9,20 +9,17 @@ public class Player : MonoBehaviour
 
     private void Awake()
     {
-        //LoadPlayer();
+        LoadPlayer();
         textWelcom.text = "С возвращением\n" + name + " !!!!";
     }
 
+    public void SavePlayer()
+    {
+        
+    }
 
-    //public void SavePlayer()
-    //{
-    //    SaveSystem.SavePlayer(this);
-    //}
+    public void LoadPlayer()
+    {
 
-    //public void LoadPlayer()
-    //{
-    //    PlayerData data = SaveSystem.LoadPlayer();
-
-    //    name = data.name;
-    //}
+    }
 }

@@ -23,7 +23,6 @@ public class PlayerMovementSystem : MonoBehaviour
     /// </summary>
     private float speed = 5f;
 
-
     private void Start()
     {
         Camera.main.GetComponent<CameraMov>().player = gameObject.transform;

@@ -42,12 +42,11 @@ public class PlayerController_Photon_Script : MonoBehaviourPunCallbacks
         }
         else
         {
-            //SetName();
+            GetName();
             Camera.main.GetComponent<CameraMov>().player = gameObject.transform;
             rigidbody2D = GetComponent<Rigidbody2D>();
             joystick = GameObject.Find("Fixed Joystick").GetComponent<Joystick>();
         }
-        
     }
 
     private void FixedUpdate()
@@ -80,7 +79,7 @@ public class PlayerController_Photon_Script : MonoBehaviourPunCallbacks
     /// <summary>
     /// Получить имя
     /// </summary>
-    public void SetName()
+    public void GetName()
     {
         textName.text = photonView.Owner.NickName;
         Debug.Log(textName.text + " - 1");

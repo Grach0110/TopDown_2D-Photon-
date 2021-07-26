@@ -10,7 +10,7 @@ public class JoinRandomRoom_script : MonoBehaviourPunCallbacks
     /// <summary>
     /// Кнопка случайной игры
     /// </summary>
-    [SerializeField] Button buttonJoinRandonRooms;
+    [SerializeField] private Button buttonJoinRandonRooms;
     /// <summary>
     /// Название случайной игры
     /// </summary>

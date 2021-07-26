@@ -100,6 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   imageWeapon: {fileID: 0}
   spriteGuns:
+  - {fileID: 21300000, guid: 63e258da2921075428f87346c8c9be7e, type: 3}
   - {fileID: 21300000, guid: 68e74632055f6440ab6cbb9106b7102b, type: 3}
   - {fileID: 21300000, guid: b2cc2d527cc31489c90d6a216d3a5803, type: 3}
   textAmmo: {fileID: 0}
